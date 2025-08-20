@@ -3,7 +3,7 @@ import {
   ResourceTemplate,
 } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-
+import { connectToDataBase } from "../database/db.js";
 import {
   verificarEstoqueTool,
   listarClientesTool,
@@ -12,6 +12,12 @@ import {
   listarVendasTool,
   clientesMaisCompramTool,
 } from "./tools.js";
+
+let pool;
+async () => {
+  pool = await connectToDataBase();
+  console.log("POOL: ", pool);
+};
 
 const server = new McpServer({
   name: "meu-mcp",

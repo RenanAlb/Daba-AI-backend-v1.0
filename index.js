@@ -15,7 +15,6 @@ const port = process.env.PORT || 8080;
 // Iniciar MCP Client
 (async () => {
   await initMcpClient();
-  await connectToDataBase();
 })();
 
 // Middlewares
