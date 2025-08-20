@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectToLlmModel from "./src/llm/model.js";
 import { getMcpClient, initMcpClient } from "./src/mcp/client.js";
+import { connectToDataBase } from "./src/database/db.js";
 
 // Dotenv config.
 dotenv.config();
@@ -14,6 +15,7 @@ const port = process.env.PORT || 8080;
 // Iniciar MCP Client
 (async () => {
   await initMcpClient();
+  await connectToDataBase();
 })();
 
 // Middlewares
