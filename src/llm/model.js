@@ -93,7 +93,7 @@ const connectToLlmModel = async (question) => {
       method: "POST",
       headers: {
         Authorization: `Bearer ${OPENROUTER_API_KEY}`,
-        "HTTP-Referer": "http://127.0.0.1:5500",
+        "HTTP-Referer": "https://daba-ai-frontend-v1-0.onrender.com",
         "X-Title": "Daba AI MCP",
         "Content-Type": "application/json",
       },
