@@ -10,18 +10,7 @@ const pool = new Pool({
   ssl: false,
 });
 
-// // Testa a conexão
-// (async () => {
-//   try {
-//     const client = await pool.connect();
-//     console.log("Conectado ao PostgreSQL");
-//     client.release();
-//   } catch (error) {
-//     console.error("Erro ao se conectar ao PostgreSQL. Error => ", error);
-//   }
-// })();
-
-export const connectToDataBase = async () => {
+const connectToDataBase = async () => {
   try {
     const client = await pool.connect();
     console.log("Conectado ao PostgreSQL");
@@ -31,3 +20,7 @@ export const connectToDataBase = async () => {
     console.error("Erro ao se conectar ao PostgreSQL. Error => ", error);
   }
 };
+
+connectToDataBase();
+
+export default pool;
