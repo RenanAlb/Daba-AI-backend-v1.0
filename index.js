@@ -18,7 +18,12 @@ const port = process.env.PORT || 8080;
 
 // Middlewares
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://daba-ai-frontend-v1-0.onrender.com",
+    credentials: true,
+  })
+);
 
 function extractJSON(text) {
   try {

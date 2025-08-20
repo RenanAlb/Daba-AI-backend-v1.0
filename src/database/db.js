@@ -5,6 +5,8 @@ dotenv.config();
 
 const { Pool } = pkg;
 
+console.log("Valor de DATABASE_URL: ", process.env.DATABASE_URL);
+
 // Tipando a conexão com PostgreSQL
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
