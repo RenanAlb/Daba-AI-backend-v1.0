@@ -15,10 +15,12 @@ const pool = new Pool({
 // Testa a conexão
 (async () => {
   try {
+    console.log("Valor de DATABASE_URL: ", process.env.DATABASE_URL);
     const client = await pool.connect();
     console.log("Conectado ao PostgreSQL");
     client.release();
   } catch (error) {
+    console.log("Valor de DATABASE_URL: ", process.env.DATABASE_URL);
     console.error("Erro ao se conectar ao PostgreSQL. Error => ", error);
   }
 })();
