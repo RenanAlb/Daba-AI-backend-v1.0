@@ -1,6 +1,5 @@
 import pkg from "pg";
 import dotenv from "dotenv";
-
 dotenv.config();
 
 const { Pool } = pkg;
@@ -10,7 +9,7 @@ console.log("Valor de DATABASE_URL: ", process.env.DATABASE_URL);
 // Tipando a conexão com PostgreSQL
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: false,
+  ssl: { rejectUnauthorized: false },
 });
 
 // Testa a conexão

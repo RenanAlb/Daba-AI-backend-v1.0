@@ -1,16 +1,5 @@
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
-import dotenv from "dotenv";
-
-dotenv.config();
-
-const OPENROUTER_URL = process.env.OPENROUTER_URL;
-const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
-
-// Adicione estes logs
-console.log("Valor de OPENROUTER_URL:", OPENROUTER_URL);
-console.log("Valor de OPENROUTER_API_KEY:", OPENROUTER_API_KEY);
-console.log("Valor de DATABASE_URL:", process.env.DATABASE_URL);
 
 // Tipo do client para evitar "qualquer coisa"
 let client;
