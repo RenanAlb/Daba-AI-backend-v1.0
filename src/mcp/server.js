@@ -12,6 +12,8 @@ import {
   listarVendasTool,
   clientesMaisCompramTool,
 } from "./tools.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 const server = new McpServer({
   name: "meu-mcp",
