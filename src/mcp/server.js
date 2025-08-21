@@ -264,4 +264,9 @@ server.registerTool(
 
 // Conectar via STDIO
 const transport = new StdioServerTransport();
+// Inicializar o pool do banco de dados antes de conectar o servidor MCP
+initPool();
+
+// Testar a conexão com o banco de dados
+await testDbConnection();
 await server.connect(transport);
