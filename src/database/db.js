@@ -4,13 +4,22 @@ dotenv.config();
 
 const { Pool } = pkg;
 
+let pool;
 // Tipando a conexão com PostgreSQL
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: false,
-});
+const startDataBase = async () => {
+  if (!process.env.DATABASE_URL) {
+    return console.log("DATABASE_URL não está definida");
+  }
 
-const connectToDataBase = async () => {
+  pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: false,
+  });
+};
+
+startDataBase();
+
+export const connectToDataBase = async () => {
   try {
     const client = await pool.connect();
     console.log("Conectado ao PostgreSQL");
@@ -20,7 +29,5 @@ const connectToDataBase = async () => {
     console.error("Erro ao se conectar ao PostgreSQL. Error => ", error);
   }
 };
-
-connectToDataBase();
 
 export default pool;
