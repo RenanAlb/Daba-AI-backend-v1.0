@@ -45,7 +45,7 @@ const chatHistory = [
     - listar_vendas          → Retorna a lista de vendas (arguments: null)
     - produtos_mais_vendidos → Retorna os produtos mais vendidos (arguments: null)
     - clientes_mais_compram  → Retorna os clientes que mais compram (arguments: null)
-    - verificar_estoque      → Retorna a quantidade em estoque de um produto específico (arguments: { produto_id: "ID do produto" })
+    - verificar_estoque      → Retorna a quantidade em estoque de um produto específico (arguments: { produto_id: "ID do produto type number" })
 
     Verifique se a ferramenta escolhida precisa de argumento(s). 
 
