@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectToLlmModel from "./src/llm/model.js";
 import { getMcpClient, initMcpClient } from "./src/mcp/client.js";
+import pool from "./src/database/db.js";
 
 // Dotenv config.
 dotenv.config();
