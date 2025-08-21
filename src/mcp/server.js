@@ -3,7 +3,7 @@ import {
   ResourceTemplate,
 } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import pool from "../database/db.js";
+import { initPool, getPool, testDbConnection } from "../database/db.js";
 import {
   verificarEstoqueTool,
   listarClientesTool,
@@ -27,6 +27,7 @@ server.registerTool(
   },
   async ({}) => {
     try {
+      const pool = getPool();
       const result = await pool.query(
         "SELECT id, nome, email, data_cadastro FROM clientes"
       );
@@ -62,6 +63,7 @@ server.registerTool(
   },
   async () => {
     try {
+      const pool = getPool();
       const resultListarProdutos = await pool.query("SELECT * FROM produtos");
 
       return {
@@ -95,6 +97,7 @@ server.registerTool(
   },
   async () => {
     try {
+      const pool = getPool();
       const resultListarVendas = await pool.query("SELECT * FROM vendas");
 
       return {
@@ -128,6 +131,7 @@ server.registerTool(
   },
   async () => {
     try {
+      const pool = getPool();
       const resultProdutosMaisVendidos = await pool.query(
         `SELECT 
     p.id,
@@ -174,6 +178,7 @@ server.registerTool(
   },
   async () => {
     try {
+      const pool = getPool();
       const resultClientesMaisCompram = await pool.query(`SELECT 
     c.id AS cliente_id,
     c.nome AS cliente_nome,
@@ -218,6 +223,7 @@ server.registerTool(
   },
   async ({ produto_id }) => {
     try {
+      const pool = getPool();
       const resultVerificarEstoque = await pool.query(
         "SELECT estoque FROM produtos WHERE id = $1",
         [produto_id]
