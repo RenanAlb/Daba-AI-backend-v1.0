@@ -172,7 +172,7 @@ As ferramentas são o coração da Daba AI, permitindo a interação segura com 
 
 ## 🗃️ Guia do Banco de Dados
 
-A estrutura completa do banco de dados, incluindo diagramas e descrições detalhadas das tabelas, pode ser encontrada no arquivo [docs/database-guide.md](./backend/docs/database-guide.md).
+A estrutura completa do banco de dados, incluindo diagramas e descrições detalhadas das tabelas, pode ser encontrada no arquivo [docs/database-guide.md](./docs/database-guide.md).
 
 Abaixo estão os scripts SQL para criar e popular o banco de dados para testes.
 
